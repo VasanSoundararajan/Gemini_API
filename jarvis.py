@@ -52,16 +52,49 @@ def speak_text(text):
     engine.runAndWait()
 
 if __name__ == "__main__":
-    api_key = "YOUR_API_KEY"
+    api_key = "AIzaSyCO_ylx7jpwqMJg_C5Roqx36zxzP2JupSg"
     chat = GeminiChat(api_key)
 
     while True:
         user_input = get_audio_input()
         if user_input:
-            if "stop" in user_input.lower():
+            if "who are you" in user_input.lower():
+                print("🤖 Response: I am Jarvis, your personal assistant.")
+                speak_text("I am Jarvis, your personal assistant.")
+
+            elif "start" in user_input.lower():
+                print("🤖 Response: 🚀 Starting the program.")
+                speak_text("Starting the program.")
+
+            elif "hello" in user_input.lower():
+                print("🤖 Response: 👋 Hello! Cheif How are you?")
+                speak_text("Hello! Cheif How are you?")
+
+            elif "how are you" in user_input.lower():
+                print("🤖 Response: I'm doing great. Thanks for asking!")
+                speak_text("I'm doing great. Thanks for asking")
+
+            elif "what can you do" in user_input.lower():
+                print("🤖 Response: I can help you with various tasks like sending emails, setting up reminders, and more.")
+                speak_text("I can help you with various tasks like sending emails, setting up reminders, and more.")
+
+            elif "Good Morning" in user_input:
+                print("🤖 Response: Good Morning! How can I help you today?")
+                speak_text("Good Morning! How can I help you today?")
+
+            elif "Good Afternoon" in user_input:
+                print("🤖 Response: Good Afternoon! How can I help you today?")
+                speak_text("Good Afternoon! How can I help you today?")
+
+            elif "Good Evening" in user_input:
+                print("Good Evening! How can I help you today?")
+                speak_text("Good Evening! How can I help you today?")
+
+            elif "stop" in user_input.lower():
                 print("🛑 Stopping the program.")
                 break
 
-            response_text = chat.send_message(user_input)
-            print(f"🤖 Gemini Response: {response_text}")
-            speak_text(response_text)
+            else:
+                response_text = chat.send_message(user_input)
+                print(f"🤖 Response: {response_text}")
+                speak_text(response_text)

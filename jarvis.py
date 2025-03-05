@@ -52,7 +52,7 @@ def speak_text(text):
     engine.runAndWait()
 
 if __name__ == "__main__":
-    api_key = "AIzaSyCO_ylx7jpwqMJg_C5Roqx36zxzP2JupSg"
+    api_key = "API_KEY"
     chat = GeminiChat(api_key)
 
     while True:
